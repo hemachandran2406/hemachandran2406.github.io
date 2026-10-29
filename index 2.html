@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smiley Kids Gurukulam · Play School in Tirupur</title>
+<meta name="description" content="Smiley Kids Gurukulam is a warm, safe play school in Tirupur for Playgroup, Nursery, LKG and UKG.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+:root{
+  --sky:#BFE6FF; --sky2:#D9F1FF; --paper:#FFFBF0; --paper2:#EAF6FF; --card:#FFFFFF;
+  --ink:#1E2A4A; --ink-soft:#43507A; --line:#1E2A4A;
+  --sun:#FFCB3D; --tang:#FF7A45; --blue:#2B7FD6; --leaf:#1F8A3B;
+  --t1:#FFE3D5; --t2:#FFF1BF; --t3:#D9F0FF; --t4:#DDF3D2;
+  --hill1:#9ED98A; --hill2:#7CC46A; --hill3:#62B356;
+  --night:0;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --sky:#22346B; --sky2:#1B2A57; --paper:#121A35; --paper2:#172247; --card:#1D2950;
+    --ink:#FFF7E6; --ink-soft:#C9D3EA; --line:#0B1430;
+    --t1:#3A2A3A; --t2:#3A3626; --t3:#1E3557; --t4:#1F3A33;
+    --hill1:#3F7F4E; --hill2:#356E43; --hill3:#2C5E39;
+    --night:1;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --sky:#22346B; --sky2:#1B2A57; --paper:#121A35; --paper2:#172247; --card:#1D2950;
+  --ink:#FFF7E6; --ink-soft:#C9D3EA; --line:#0B1430;
+  --t1:#3A2A3A; --t2:#3A3626; --t3:#1E3557; --t4:#1F3A33;
+  --hill1:#3F7F4E; --hill2:#356E43; --hill3:#2C5E39;
+  --night:1;
+  color-scheme: dark;
+}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Nunito',Verdana,Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:'Baloo 2','Nunito',Arial,sans-serif}
+img,svg{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ln{fill:none;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:4px solid var(--blue);outline-offset:3px;border-radius:12px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:12px 26px;border-radius:999px;font:800 17px/1.1 'Nunito',Arial,sans-serif;text-decoration:none;border:3px solid #1E2A4A;color:#1E2A4A;cursor:pointer;box-shadow:0 5px 0 #1E2A4A;transition:transform .18s cubic-bezier(.34,1.56,.64,1),box-shadow .18s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 0 #1E2A4A}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #1E2A4A}
+.b-sun{background:var(--sun)}.b-tang{background:var(--tang)}.b-white{background:#FFFFFF}.b-leaf{background:var(--leaf);color:#FFFFFF}
+
+/* ---------- NAV ---------- */
+.nav{position:absolute;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:88px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font:800 23px/1 'Baloo 2',Arial,sans-serif;display:block}
+.brand small{font:700 14px/1.2 'Nunito',Arial,sans-serif;color:var(--ink-soft)}
+.links{display:flex;gap:6px;list-style:none;margin:0;padding:6px;background:color-mix(in srgb,var(--card) 80%,transparent);border:3px solid var(--line);border-radius:999px;backdrop-filter:blur(6px)}
+.links a{display:block;padding:9px 16px;border-radius:999px;text-decoration:none;font-weight:800;font-size:15px}
+.links a:hover{background:var(--sun);color:#1E2A4A}
+@media (max-width:1020px){.links{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:max(760px,100svh);background:var(--sky);overflow:hidden;isolation:isolate}
+.sunbig{position:absolute;right:-110px;top:96px;width:320px;height:320px;z-index:0}
+@media (max-width:700px){.sunbig{width:170px;height:170px;right:-64px;top:96px}}
+.rays{transform-origin:190px 190px;animation:spin 40s linear infinite}
+.stars{position:absolute;inset:0;opacity:var(--night);z-index:0;pointer-events:none}
+.cloud{position:absolute;left:0;z-index:1;animation:drift linear infinite;will-change:transform}
+@keyframes drift{from{transform:translateX(-300px)}to{transform:translateX(calc(100vw + 300px))}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.rainbow{position:absolute;left:50%;top:calc(env(safe-area-inset-top,0px) + 110px);width:min(1100px,130vw);transform:translateX(-50%);z-index:1}
+.rainbow path{stroke-dasharray:2400;stroke-dashoffset:2400;animation:drawR 1.6s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes drawR{to{stroke-dashoffset:0}}
+
+.heroInner{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:calc(env(safe-area-inset-top,0px) + 150px)}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:3px solid var(--line);border-radius:999px;padding:7px 16px 7px 10px;font-weight:800;font-size:15px;opacity:0;animation:up .7s 1.2s cubic-bezier(.2,.8,.2,1) forwards}
+.dot{width:12px;height:12px;border-radius:50%;background:#22B357;box-shadow:0 0 0 0 rgba(34,179,87,.6);animation:ping 1.6s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(34,179,87,0)}100%{box-shadow:0 0 0 0 rgba(34,179,87,0)}}
+
+.title{margin:18px 0 0;line-height:.86;font-weight:800;letter-spacing:-1px}
+.word{display:inline-flex}
+.title .row{display:flex;justify-content:center;gap:clamp(10px,2.2vw,34px);flex-wrap:wrap}
+.ch{display:inline-block;font-size:clamp(66px,12.5vw,178px);color:var(--c);-webkit-text-stroke:clamp(3px,.5vw,7px) #1E2A4A;paint-order:stroke fill;text-shadow:0 clamp(5px,.7vw,10px) 0 #1E2A4A;transform:translateY(-120%) rotate(var(--r));opacity:0;animation:drop .9s cubic-bezier(.34,1.56,.64,1) forwards,bob 3.4s ease-in-out infinite;animation-delay:var(--d),calc(var(--d) + 1s);cursor:default;transition:transform .2s}
+.ch:hover{animation-play-state:paused;transform:translateY(-14px) rotate(calc(var(--r) * -2)) scale(1.06)}
+@keyframes drop{0%{transform:translateY(-120%) rotate(var(--r));opacity:0}60%{opacity:1}100%{transform:translateY(0) rotate(var(--r));opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-8px) rotate(calc(var(--r) * -1))}}
+
+.ribbon{position:relative;display:inline-block;margin-top:clamp(10px,1.4vw,18px);opacity:0;animation:ribbonIn .8s 1.05s cubic-bezier(.34,1.56,.64,1) forwards}
+.ribbon svg{display:block;width:clamp(300px,42vw,560px);height:auto;overflow:visible}
+@keyframes ribbonIn{from{transform:scale(.4) rotate(-8deg);opacity:0}to{transform:scale(1) rotate(-2deg);opacity:1}}
+
+.tag{max-width:40ch;margin:clamp(14px,2vw,26px) auto 0;font-size:clamp(18px,1.6vw,21px);line-height:1.55;font-weight:700;color:var(--ink);opacity:0;animation:up .7s 1.35s cubic-bezier(.2,.8,.2,1) forwards}
+.ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:26px;opacity:0;animation:up .7s 1.5s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+
+.land{position:absolute;left:0;right:0;bottom:0;height:clamp(230px,30vw,330px);z-index:3;pointer-events:none}
+.layer{position:absolute;left:-4%;right:-4%;bottom:0;will-change:transform;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.layer svg{display:block;width:100%;height:auto}
+.track{position:absolute;left:0;right:0;bottom:clamp(8px,2vw,22px);height:120px;z-index:6;pointer-events:none}
+@media (max-width:700px){.rainbow{clip-path:inset(0 0 38% 0)}.kite{display:none}.track{transform:scale(.72);transform-origin:left bottom;width:139%}.brand small{display:none}.nav .btn{min-height:46px;padding:8px 16px;font-size:15px;white-space:nowrap}}
+.lane{position:absolute;inset:0;animation:run linear infinite;will-change:transform}
+@keyframes run{from{transform:translateX(-140px)}to{transform:translateX(calc(100vw + 140px))}}
+.kid{position:absolute;bottom:0;left:0;animation:hop .34s ease-in-out infinite alternate}
+@keyframes hop{to{transform:translateY(-7px)}}
+.kid .shirt{fill:var(--shirt)}.kid .skin{fill:var(--skin)}.kid .hair{fill:var(--hair)}
+.kid .pants{stroke:var(--pants)}.kid .arm{stroke:var(--skin)}
+.legF,.armB{transform-box:fill-box;transform-origin:50% 0;animation:sw1 .34s ease-in-out infinite alternate}
+.legB,.armF{transform-box:fill-box;transform-origin:50% 0;animation:sw2 .34s ease-in-out infinite alternate}
+@keyframes sw1{from{transform:rotate(34deg)}to{transform:rotate(-34deg)}}
+@keyframes sw2{from{transform:rotate(-34deg)}to{transform:rotate(34deg)}}
+.wag{transform-box:fill-box;transform-origin:0 100%;animation:wag .28s linear infinite alternate}
+@keyframes wag{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}
+.kite{position:absolute;z-index:4;right:5%;top:41%;animation:kite 6s ease-in-out infinite;transform-origin:bottom left}
+@keyframes kite{0%,100%{transform:translate(0,0) rotate(-6deg)}50%{transform:translate(-30px,-26px) rotate(8deg)}}
+.tail{animation:tailW 1s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:top center}
+@keyframes tailW{from{transform:skewX(-14deg)}to{transform:skewX(14deg)}}
+.swing{transform-origin:62px 6px;animation:swing 2.4s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(22deg)}50%{transform:rotate(-22deg)}}
+.flag{transform-box:fill-box;transform-origin:left center;animation:flag 1.3s ease-in-out infinite alternate}
+@keyframes flag{from{transform:skewY(-6deg) scaleX(1)}to{transform:skewY(6deg) scaleX(.86)}}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 3.4s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+.bfly{position:absolute;z-index:6;animation:bfly 9s ease-in-out infinite}
+.bfly .w{transform-box:fill-box;transform-origin:right center;animation:flap .18s ease-in-out infinite alternate}
+.bfly .w2{transform-origin:left center}
+@keyframes flap{to{transform:scaleX(.3)}}
+@keyframes bfly{0%{transform:translate(0,0)}25%{transform:translate(120px,-60px)}50%{transform:translate(240px,10px)}75%{transform:translate(110px,50px)}100%{transform:translate(0,0)}}
+
+/* ---------- SECTIONS ---------- */
+section{position:relative}
+.sec{padding:clamp(72px,9vw,112px) 0}
+.h2{margin:0 0 12px;font-size:clamp(38px,4.6vw,58px);line-height:1;font-weight:800;letter-spacing:-.5px}
+.lede{margin:0;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--ink-soft);max-width:58ch}
+.head{margin-bottom:clamp(32px,4vw,52px)}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.prog{background:var(--tint);border:3px solid var(--line);border-radius:30px;padding:26px;display:flex;flex-direction:column;gap:10px;box-shadow:0 8px 0 var(--line);transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.prog:hover{transform:translateY(-10px) rotate(-1.5deg)}
+.prog:hover .ico{animation:wig .5s ease-in-out 2}
+@keyframes wig{25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+.prog h3{margin:4px 0 0;font-size:30px;line-height:1}
+.age{font-weight:800;color:var(--ink-soft)}
+.prog p{margin:0;font-size:17px;line-height:1.55}
+@media (max-width:980px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.grid4{grid-template-columns:minmax(0,1fr)}}
+
+.day{background:var(--paper2)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;position:relative}
+.steps::before{content:"";position:absolute;left:8%;right:8%;top:44px;border-top:4px dashed var(--ink);opacity:.25}
+.steps li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;position:relative}
+.bub{width:88px;height:88px;border-radius:50%;border:3px solid var(--line);display:grid;place-items:center;background:var(--b);box-shadow:0 6px 0 var(--line)}
+.steps strong{font:800 21px/1.1 'Baloo 2',Arial,sans-serif}
+.steps span{font-size:16px;line-height:1.45;color:var(--ink-soft)}
+.walker{position:absolute;left:0;right:0;top:-34px;height:60px;pointer-events:none;overflow:hidden}
+.day{overflow:hidden}
+.walker .lane{animation-duration:16s}
+@media (max-width:980px){.steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:34px}.steps::before,.walker{display:none}}
+@media (max-width:560px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.scene{margin:0;background:var(--tint);border:3px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:0 8px 0 var(--line)}
+.scene svg{display:block;width:100%;height:auto}
+.scene figcaption{padding:18px 24px 22px;background:var(--card);border-top:3px solid var(--line)}
+.scene b{font:800 24px/1.1 'Baloo 2',Arial,sans-serif;display:block}
+.scene span{font-size:16px;color:var(--ink-soft)}
+@media (max-width:860px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.brush{transform-box:fill-box;transform-origin:10% 10%;animation:brush 1.2s ease-in-out infinite alternate}
+@keyframes brush{from{transform:rotate(-14deg)}to{transform:rotate(18deg)}}
+.redraw{stroke-dasharray:240;animation:redraw 3.4s ease-in-out infinite}
+@keyframes redraw{0%{stroke-dashoffset:240}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:-240}}
+.pop{transform-box:fill-box;transform-origin:center;animation:pop 2.4s ease-in-out infinite}
+@keyframes pop{0%,100%{transform:scale(.6);opacity:.45}50%{transform:scale(1.15);opacity:1}}
+.rise{transform-box:fill-box;animation:rise 4s ease-out infinite}
+@keyframes rise{0%{transform:translateY(30px);opacity:0}20%{opacity:1}100%{transform:translateY(-60px);opacity:0}}
+.scene svg{overflow:hidden}
+.drip{animation:drip 1s linear infinite}
+@keyframes drip{from{transform:translateY(0);opacity:1}to{transform:translateY(46px);opacity:0}}
+.tilt{transform-box:fill-box;transform-origin:15% 40%;animation:tilt 2s ease-in-out infinite alternate}
+@keyframes tilt{from{transform:rotate(0)}to{transform:rotate(-18deg)}}
+.grow{transform-box:fill-box;transform-origin:50% 100%;animation:grow 2s ease-in-out infinite alternate}
+@keyframes grow{from{transform:scaleY(.85)}to{transform:scaleY(1.08)}}
+.dance{transform-box:fill-box;transform-origin:50% 100%;animation:dance .8s ease-in-out infinite alternate}
+@keyframes dance{from{transform:rotate(-8deg)}to{transform:rotate(8deg) translateY(-8px)}}
+.beat{transform-box:fill-box;transform-origin:90% 90%;animation:beat .4s ease-in-out infinite alternate}
+@keyframes beat{to{transform:rotate(-30deg)}}
+.flyB{transform-box:fill-box;animation:flyB 5s ease-in-out infinite}
+@keyframes flyB{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-30px)}66%{transform:translate(80px,6px)}}
+
+.portal{background:#1E2A4A;color:#FFF7E6}
+.portal .lede{color:#D3DCEF}
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:center}
+@media (max-width:900px){.split{grid-template-columns:minmax(0,1fr)}}
+.ticks{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:18px;font-weight:700}
+.ticks li{display:flex;gap:12px;align-items:center}
+.phone{width:300px;max-width:100%;margin:0 auto;background:#0F1830;border-radius:46px;padding:14px;box-shadow:18px 18px 0 var(--tang)}
+.screen{background:#FFFBF0;color:#1E2A4A;border-radius:34px;padding:22px 18px;min-height:520px;display:flex;flex-direction:column;gap:12px}
+.note{background:#FFFFFF;border:2px solid #1E2A4A;border-radius:18px;padding:12px 14px;display:flex;align-items:center;gap:12px;opacity:0;transform:translateX(30px)}
+.in .note{animation:noteIn .6s cubic-bezier(.2,.8,.2,1) forwards}
+.in .note:nth-child(3){animation-delay:.2s}.in .note:nth-child(4){animation-delay:.4s}.in .note:nth-child(5){animation-delay:.6s}
+@keyframes noteIn{to{opacity:1;transform:none}}
+.note i{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:none}
+.note b{display:block;font-size:15px}.note small{font-size:13px;color:#4B5672}
+.newb{white-space:nowrap;background:var(--tang);border-radius:999px;padding:2px 10px;font-weight:800;font-size:13px;animation:nb 1.4s ease-in-out infinite}
+@keyframes nb{50%{transform:scale(1.12)}}
+
+.faq{max-width:860px}
+.q{background:var(--card);border:3px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:14px}
+.q button{width:100%;background:none;border:0;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font:800 19px/1.3 'Nunito',Arial,sans-serif;color:var(--ink);text-align:left;cursor:pointer;min-height:64px}
+.q .pl{width:36px;height:36px;border-radius:50%;background:var(--sun);display:grid;place-items:center;flex:none;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.q[data-open="true"] .pl{transform:rotate(45deg)}
+.ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.q[data-open="true"] .ans{grid-template-rows:1fr}
+.ans>div{overflow:hidden}
+.ans p{margin:0;padding:0 24px 22px;font-size:17px;line-height:1.6;color:var(--ink-soft)}
+
+.visit{background:var(--sky)}
+.formcard{background:var(--card);border:3px solid var(--line);border-radius:30px;padding:clamp(22px,3vw,34px);box-shadow:12px 12px 0 var(--line);position:relative;overflow:hidden}
+.formcard label{display:flex;flex-direction:column;gap:6px;font-weight:800;margin-bottom:16px}
+.formcard input,.formcard select{font:600 17px 'Nunito',Arial,sans-serif;padding:14px 16px;border:3px solid var(--line);border-radius:16px;min-height:54px;background:#FFFFFF;color:#1E2A4A}
+.thanks{display:none;text-align:center;padding:30px 0}
+.sent .thanks{display:block;animation:up .6s cubic-bezier(.2,.8,.2,1)}
+.sent form{display:none}
+.conf{position:absolute;top:-20px;width:10px;height:16px;border-radius:3px;opacity:0}
+.sent .conf{animation:fall 2.4s ease-in forwards}
+@keyframes fall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(520px) rotate(620deg);opacity:0}}
+.map{background:var(--t4);border:3px solid var(--line);border-radius:26px;overflow:hidden}
+.pin{transform-box:fill-box;animation:pin 1.2s ease-in-out infinite alternate}
+@keyframes pin{to{transform:translateY(-14px)}}
+
+footer{background:#1E2A4A;color:#FFF7E6}
+.waveArm{transform-box:fill-box;transform-origin:50% 100%;animation:waveA .6s ease-in-out infinite alternate}
+@keyframes waveA{from{transform:rotate(-24deg)}to{transform:rotate(30deg)}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s !important;animation-iteration-count:1 !important;transition:none !important}
+  .lane,.cloud{display:none}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="home">
+  <svg class="stars" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="#FFF7E6"><circle cx="120" cy="80" r="2"/><circle cx="300" cy="160" r="1.6"/><circle cx="520" cy="60" r="2.2"/><circle cx="760" cy="120" r="1.5"/><circle cx="980" cy="70" r="2"/><circle cx="1180" cy="190" r="1.7"/><circle cx="1320" cy="90" r="2.2"/><circle cx="200" cy="260" r="1.4"/><circle cx="660" cy="240" r="1.8"/><circle cx="1060" cy="280" r="1.5"/></g>
+  </svg>
+
+  <svg class="sunbig" viewBox="0 0 380 380" aria-hidden="true">
+    <g class="rays" fill="#FFCB3D" opacity=".55"><path d="M190 0 L206 70 L174 70Z"/><path d="M380 190 L310 206 L310 174Z"/><path d="M190 380 L174 310 L206 310Z"/><path d="M0 190 L70 174 L70 206Z"/><path d="M324 56 L276 110 L262 96Z"/><path d="M324 324 L262 284 L276 270Z"/><path d="M56 324 L96 262 L110 276Z"/><path d="M56 56 L110 96 L96 110Z"/></g>
+    <circle cx="190" cy="190" r="104" fill="#FFCB3D" stroke="#1E2A4A" stroke-width="6"/>
+    <circle cx="160" cy="210" r="9" fill="#1E2A4A"/><circle cx="214" cy="210" r="9" fill="#1E2A4A"/>
+    <path class="ln" d="M150 236 Q187 270 224 236" stroke="#1E2A4A" stroke-width="8"/>
+    <circle cx="136" cy="238" r="12" fill="#FF7A45" opacity=".5"/><circle cx="238" cy="238" r="12" fill="#FF7A45" opacity=".5"/>
+  </svg>
+
+  <div class="cloud" style="top:120px;animation-duration:75s;animation-delay:-20s" aria-hidden="true"><svg width="200" height="76" viewBox="0 0 180 70"><path d="M30 60 Q0 60 10 40 Q14 22 40 26 Q50 2 82 10 Q104 0 120 22 Q150 14 160 38 Q182 44 168 60Z" fill="#FFFFFF" stroke="#1E2A4A" stroke-width="3" opacity=".95"/></svg></div>
+  <div class="cloud" style="top:300px;animation-duration:95s;animation-delay:-60s" aria-hidden="true"><svg width="140" height="54" viewBox="0 0 180 70"><path d="M30 60 Q0 60 10 40 Q14 22 40 26 Q50 2 82 10 Q104 0 120 22 Q150 14 160 38 Q182 44 168 60Z" fill="#FFFFFF" stroke="#1E2A4A" stroke-width="3"/></svg></div>
+  <div class="cloud" style="top:210px;animation-duration:110s;animation-delay:-5s" aria-hidden="true"><svg width="110" height="42" viewBox="0 0 180 70"><path d="M30 60 Q0 60 10 40 Q14 22 40 26 Q50 2 82 10 Q104 0 120 22 Q150 14 160 38 Q182 44 168 60Z" fill="#FFFFFF" stroke="#1E2A4A" stroke-width="3"/></svg></div>
+
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="#home">
+        <svg width="54" height="54" viewBox="0 0 100 100" aria-hidden="true"><g style="transform-origin:50px 50px;animation:spin 18s linear infinite"><circle cx="50" cy="50" r="46" fill="#FFCB3D"/><path d="M50 0 L57 14 L43 14Z M100 50 L86 57 L86 43Z M50 100 L43 86 L57 86Z M0 50 L14 43 L14 57Z" fill="#FF7A45"/></g><circle cx="50" cy="50" r="31" fill="#FFE07A" stroke="#1E2A4A" stroke-width="5"/><circle cx="40" cy="46" r="4" fill="#1E2A4A"/><circle cx="60" cy="46" r="4" fill="#1E2A4A"/><path class="ln" d="M37 57 Q50 70 63 57" stroke="#1E2A4A" stroke-width="5"/></svg>
+        <span><b>Smiley Kids</b><small>Gurukulam, Tirupur</small></span>
+      </a>
+      <ul class="links">
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#day">A day here</a></li>
+        <li><a href="#life">Life at school</a></li>
+        <li><a href="#portal">Parent portal</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+      <a class="btn b-tang" href="#visit">Book a visit</a>
+    </div>
+  </nav>
+
+  <svg class="rainbow" viewBox="0 0 1100 900" aria-hidden="true">
+    <g fill="none" stroke-linecap="round">
+      <path d="M90 900 V560 A460 460 0 0 1 1010 560 V900" stroke="#FF7A45" stroke-width="34" opacity=".9" style="animation-delay:.05s"/>
+      <path d="M134 900 V560 A416 416 0 0 1 966 560 V900" stroke="#FFCB3D" stroke-width="34" opacity=".9" style="animation-delay:.15s"/>
+      <path d="M178 900 V560 A372 372 0 0 1 922 560 V900" stroke="#7CC46A" stroke-width="34" opacity=".9" style="animation-delay:.25s"/>
+      <path d="M222 900 V560 A328 328 0 0 1 878 560 V900" stroke="#2B7FD6" stroke-width="34" opacity=".75" style="animation-delay:.35s"/>
+    </g>
+  </svg>
+
+  <div class="kite" aria-hidden="true">
+    <svg width="120" height="240" viewBox="0 0 120 240"><path d="M60 4 L104 52 L60 118 L16 52Z" fill="#FF7A45" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/><path class="ln" d="M60 4 V118 M16 52 H104" stroke="#1E2A4A" stroke-width="3"/><path d="M60 4 L104 52 L60 52Z" fill="#FFCB3D"/><g class="tail"><path class="ln" d="M60 118 Q44 150 62 176 Q80 204 60 236" stroke="#1E2A4A" stroke-width="3"/><path d="M52 146 l10 -6 l2 12z M58 184 l12 -4 l-2 12z M54 214 l10 -6 l2 12z" fill="#2B7FD6"/></g></svg>
+  </div>
+
+  <div class="heroInner wrap">
+    <span class="pill"><span class="dot" aria-hidden="true"></span>Admissions open for [2027–28]</span>
+    <h1 class="title" aria-label="Smiley Kids Gurukulam">
+      <span class="row" aria-hidden="true">
+        <span class="word">
+          <span class="ch" style="--c:#FF7A45;--r:-5deg;--d:.25s">S</span><span class="ch" style="--c:#FFCB3D;--r:4deg;--d:.32s">m</span><span class="ch" style="--c:#7CC46A;--r:-3deg;--d:.39s">i</span><span class="ch" style="--c:#2B7FD6;--r:5deg;--d:.46s">l</span><span class="ch" style="--c:#FF7A45;--r:-4deg;--d:.53s">e</span><span class="ch" style="--c:#FFCB3D;--r:3deg;--d:.60s">y</span>
+        </span>
+        <span class="word">
+          <span class="ch" style="--c:#7CC46A;--r:-4deg;--d:.70s">K</span><span class="ch" style="--c:#2B7FD6;--r:5deg;--d:.77s">i</span><span class="ch" style="--c:#FF7A45;--r:-3deg;--d:.84s">d</span><span class="ch" style="--c:#FFCB3D;--r:4deg;--d:.91s">s</span>
+        </span>
+      </span>
+      <span class="ribbon" aria-hidden="true">
+        <svg viewBox="0 0 560 110">
+          <path d="M18 34 L80 26 L80 96 L18 104 L40 69Z" fill="#B8471F" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M542 34 L480 26 L480 96 L542 104 L520 69Z" fill="#B8471F" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M60 14 Q280 -6 500 14 L500 86 Q280 66 60 86Z" fill="#1E2A4A" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/>
+          <text x="280" y="66" text-anchor="middle" fill="#FFF7E6" font-family="'Baloo 2', Arial, sans-serif" font-weight="800" font-size="48" letter-spacing="6">GURUKULAM</text>
+        </svg>
+      </span>
+    </h1>
+    <p class="tag">A happy play school in Tirupur where little ones learn, play and grow with stories, rhymes and Indian values.</p>
+    <div class="ctas">
+      <a class="btn b-sun" href="#visit">Book a school visit</a>
+      <a class="btn b-white" href="#visit"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M4 20 L5.5 15.5 A8 8 0 1 1 8.5 18.5Z" stroke="#1E2A4A" stroke-width="2.2"/></svg>Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- landscape -->
+  <div class="land" aria-hidden="true">
+    <div class="layer" data-depth="10">
+      <svg viewBox="0 0 1600 330" preserveAspectRatio="none"><path d="M0 170 Q200 80 420 140 T860 120 T1300 110 T1600 130 V330 H0Z" style="fill:var(--hill1)"/></svg>
+    </div>
+    <div class="layer" data-depth="18">
+      <svg viewBox="0 0 1600 330" preserveAspectRatio="xMidYMax meet">
+        <path d="M0 230 Q260 150 560 200 T1100 190 T1600 180 V330 H0Z" style="fill:var(--hill2)"/>
+        <!-- tree -->
+        <g transform="translate(150 96)"><rect x="34" y="70" width="18" height="70" rx="6" fill="#A0693F"/><g class="sway"><circle cx="43" cy="56" r="44" fill="#4FAE4A" stroke="#1E2A4A" stroke-width="4"/><circle cx="20" cy="74" r="24" fill="#5DB654"/><circle cx="68" cy="74" r="24" fill="#5DB654"/><circle cx="30" cy="40" r="6" fill="#FF7A45"/><circle cx="60" cy="60" r="6" fill="#FF7A45"/><circle cx="40" cy="80" r="6" fill="#FF7A45"/></g></g>
+        <!-- school -->
+        <g transform="translate(1090 40)">
+          <path class="ln" d="M110 26 V-16" stroke="#1E2A4A" stroke-width="5"/>
+          <path class="flag" d="M112 -14 L150 -6 L112 6Z" fill="#FF7A45" stroke="#1E2A4A" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="16" y="78" width="188" height="92" rx="10" fill="#FFFFFF" stroke="#1E2A4A" stroke-width="5"/>
+          <path d="M0 86 L110 20 L220 86Z" fill="#FF7A45" stroke="#1E2A4A" stroke-width="5" stroke-linejoin="round"/>
+          <circle cx="110" cy="60" r="16" fill="#FFCB3D" stroke="#1E2A4A" stroke-width="4"/>
+          <path class="ln" d="M103 63 Q110 70 117 63" stroke="#1E2A4A" stroke-width="3"/>
+          <rect x="34" y="102" width="40" height="34" rx="8" fill="#BFE6FF" stroke="#1E2A4A" stroke-width="4"/>
+          <rect x="146" y="102" width="40" height="34" rx="8" fill="#BFE6FF" stroke="#1E2A4A" stroke-width="4"/>
+          <path d="M90 170 V122 Q90 104 110 104 Q130 104 130 122 V170Z" fill="#FFCB3D" stroke="#1E2A4A" stroke-width="4"/>
+        </g>
+        <!-- swing -->
+        <g transform="translate(1380 74)">
+          <path class="ln" d="M14 4 L0 126 M110 4 L124 126 M8 4 H116" stroke="#1E2A4A" stroke-width="6"/>
+          <g class="swing"><path class="ln" d="M50 6 V78 M74 6 V78" stroke="#1E2A4A" stroke-width="3"/><rect x="40" y="74" width="44" height="9" rx="4" fill="#FF7A45" stroke="#1E2A4A" stroke-width="3"/><rect x="50" y="50" width="24" height="26" rx="9" fill="#2B7FD6"/><circle cx="62" cy="38" r="13" fill="#C58C5C"/><path d="M49 34 Q62 16 75 34 Q69 26 62 26 Q55 26 49 34Z" fill="#2B1B10"/><path class="ln" d="M56 76 L44 94 M68 76 L80 94" stroke="#1E2A4A" stroke-width="5"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="layer" data-depth="30">
+      <svg viewBox="0 0 1600 330" preserveAspectRatio="none"><path d="M0 268 Q300 220 640 254 T1260 246 T1600 240 V330 H0Z" style="fill:var(--hill3)"/><path class="ln" d="M0 300 Q400 270 800 292 T1600 282" stroke="#E9C98F" stroke-width="18" opacity=".8"/>
+        <g fill="#FFFFFF"><circle cx="210" cy="276" r="6"/><circle cx="520" cy="262" r="5"/><circle cx="930" cy="272" r="6"/><circle cx="1240" cy="262" r="5"/><circle cx="1460" cy="268" r="6"/></g>
+        <g fill="#FFCB3D"><circle cx="210" cy="276" r="2.5"/><circle cx="520" cy="262" r="2"/><circle cx="930" cy="272" r="2.5"/><circle cx="1240" cy="262" r="2"/><circle cx="1460" cy="268" r="2.5"/></g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="bfly" style="left:12%;bottom:280px" aria-hidden="true"><svg width="40" height="32" viewBox="0 0 40 32"><path class="w" d="M20 16 Q4 0 2 10 Q0 22 20 16Z" fill="#FF7A45" stroke="#1E2A4A" stroke-width="2"/><path class="w w2" d="M20 16 Q36 0 38 10 Q40 22 20 16Z" fill="#FFCB3D" stroke="#1E2A4A" stroke-width="2"/><path class="ln" d="M20 10 V24" stroke="#1E2A4A" stroke-width="3"/></svg></div>
+
+  <!-- runners -->
+  <div class="track" aria-hidden="true">
+    <div class="lane" style="animation-duration:17s;animation-delay:-3s"><div class="kid" style="--shirt:#FF7A45;--pants:#1E2A4A;--skin:#E0A877;--hair:#2B1B10"><svg width="62" height="104" viewBox="0 0 60 100"><g class="legB"><path class="ln pants" d="M28 64 L26 90" stroke-width="8"/><ellipse cx="28" cy="92" rx="7" ry="4" fill="#1E2A4A"/></g><g class="armB"><path class="ln arm" d="M25 40 L22 58" stroke-width="6"/></g><rect class="shirt" x="17" y="34" width="26" height="34" rx="11"/><g class="legF"><path class="ln pants" d="M33 64 L35 90" stroke-width="8"/><ellipse cx="37" cy="92" rx="7" ry="4" fill="#1E2A4A"/></g><g class="armF"><path class="ln arm" d="M35 40 L39 58" stroke-width="6"/></g><circle class="skin" cx="31" cy="21" r="14"/><path class="hair" d="M17 18 Q20 4 32 6 Q44 6 45 18 Q38 10 30 12 Q22 12 17 18Z"/><circle cx="37" cy="20" r="2" fill="#1E2A4A"/><path class="ln" d="M34 27 Q38 30 42 26" stroke="#1E2A4A" stroke-width="2"/><circle cx="40" cy="24" r="2.5" fill="#FF7A45" opacity=".55"/></svg></div></div>
+    <div class="lane" style="animation-duration:21s;animation-delay:-12s"><div class="kid" style="--shirt:#2B7FD6;--pants:#FFCB3D;--skin:#8A5A3B;--hair:#1A120B;bottom:10px"><svg width="54" height="92" viewBox="0 0 60 100"><g class="legB"><path class="ln pants" d="M28 64 L26 90" stroke-width="8"/><ellipse cx="28" cy="92" rx="7" ry="4" fill="#1E2A4A"/></g><g class="armB"><path class="ln arm" d="M25 40 L22 58" stroke-width="6"/></g><rect class="shirt" x="17" y="34" width="26" height="34" rx="11"/><g class="legF"><path class="ln pants" d="M33 64 L35 90" stroke-width="8"/><ellipse cx="37" cy="92" rx="7" ry="4" fill="#1E2A4A"/></g><g class="armF"><path class="ln arm" d="M35 40 L39 58" stroke-width="6"/></g><circle class="skin" cx="31" cy="21" r="14"/><path class="hair" d="M16 22 Q16 4 31 4 Q46 4 46 22 Q42 30 46 40 Q36 18 31 12 Q24 18 16 40 Q20 30 16 22Z"/><circle cx="37" cy="20" r="2" fill="#1E2A4A"/><path class="ln" d="M34 27 Q38 30 42 26" stroke="#1E2A4A" stroke-width="2"/><circle cx="40" cy="24" r="2.5" fill="#FF7A45" opacity=".55"/></svg></div></div>
+    <div class="lane" style="animation-duration:19s;animation-delay:-8s"><div class="kid" style="--shirt:#FFCB3D;--pants:#1F8A3B;--skin:#C58C5C;--hair:#3B2412;bottom:4px"><svg width="58" height="98" viewBox="0 0 60 100"><g class="legB"><path class="ln pants" d="M28 64 L26 90" stroke-width="8"/><ellipse cx="28" cy="92" rx="7" ry="4" fill="#1E2A4A"/></g><g class="armB"><path class="ln arm" d="M25 40 L22 58" stroke-width="6"/></g><rect class="shirt" x="17" y="34" width="26" height="34" rx="11"/><g class="legF"><path class="ln pants" d="M33 64 L35 90" stroke-width="8"/><ellipse cx="37" cy="92" rx="7" ry="4" fill="#1E2A4A"/></g><g class="armF"><path class="ln arm" d="M35 40 L39 58" stroke-width="6"/></g><circle class="skin" cx="31" cy="21" r="14"/><path class="hair" d="M17 16 Q22 2 34 6 Q44 8 45 16 Q50 10 52 16 Q47 22 45 18 Q38 10 30 12 Q22 12 17 16Z"/><circle cx="37" cy="20" r="2" fill="#1E2A4A"/><path class="ln" d="M34 27 Q38 30 42 26" stroke="#1E2A4A" stroke-width="2"/><circle cx="40" cy="24" r="2.5" fill="#FF7A45" opacity=".55"/></svg></div></div>
+    <div class="lane" style="animation-duration:15s;animation-delay:-10s"><div class="kid" style="bottom:2px"><svg width="72" height="52" viewBox="0 0 70 50"><path class="wag ln" d="M10 24 L2 12" stroke="#C98A4B" stroke-width="5"/><ellipse cx="28" cy="28" rx="20" ry="12" fill="#C98A4B"/><g class="legB"><path class="ln" d="M18 36 L16 46" stroke="#A86F37" stroke-width="5"/></g><g class="legF"><path class="ln" d="M38 36 L40 46" stroke="#A86F37" stroke-width="5"/></g><circle cx="50" cy="20" r="12" fill="#C98A4B"/><ellipse cx="46" cy="14" rx="5" ry="9" fill="#8A5A2B"/><circle cx="55" cy="18" r="2" fill="#1E2A4A"/><circle cx="61" cy="22" r="2.5" fill="#1E2A4A"/></svg></div></div>
+  </div>
+</header>
+
+<main>
+<!-- ================= PROGRAMS ================= -->
+<section class="sec" id="programs">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 class="h2">A class for every little learner</h2>
+      <p class="lede">Small groups, caring teachers and a gentle routine that grows with your child, from first steps to school-ready.</p>
+    </div>
+    <div class="grid4">
+      <article class="prog reveal" style="--tint:var(--t1)">
+        <svg class="ico" width="84" height="84" viewBox="0 0 84 84" aria-hidden="true"><rect x="8" y="44" width="32" height="32" rx="6" fill="#FFCB3D" stroke="#1E2A4A" stroke-width="4"/><rect x="44" y="44" width="32" height="32" rx="6" fill="#2B7FD6" stroke="#1E2A4A" stroke-width="4"/><rect x="26" y="8" width="32" height="32" rx="6" fill="#FF7A45" stroke="#1E2A4A" stroke-width="4"/><text x="42" y="31" text-anchor="middle" fill="#1E2A4A" font-family="'Baloo 2',Arial" font-size="20" font-weight="800">A</text><text x="24" y="67" text-anchor="middle" fill="#1E2A4A" font-family="'Baloo 2',Arial" font-size="20" font-weight="800">B</text><text x="60" y="67" text-anchor="middle" fill="#FFFFFF" font-family="'Baloo 2',Arial" font-size="20" font-weight="800">C</text></svg>
+        <h3>Playgroup</h3><span class="age">Ages [1.5–2.5 yrs]</span>
+        <p>Settling in, sensory play, songs and first friendships.</p>
+      </article>
+      <article class="prog reveal" style="--tint:var(--t2)">
+        <svg class="ico" width="84" height="84" viewBox="0 0 84 84" aria-hidden="true"><path d="M14 70 L58 14 L72 26 L28 82Z" fill="#FF7A45" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/><path d="M58 14 L66 6 L80 18 L72 26Z" fill="#FFCB3D" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/><path class="ln" d="M6 44 Q18 34 28 44 T48 44" stroke="#2B7FD6" stroke-width="5"/></svg>
+        <h3>Nursery</h3><span class="age">Ages [2.5–3.5 yrs]</span>
+        <p>Colours, shapes, rhymes and the joy of making things.</p>
+      </article>
+      <article class="prog reveal" style="--tint:var(--t3)">
+        <svg class="ico" width="84" height="84" viewBox="0 0 84 84" aria-hidden="true"><path d="M42 22 Q26 12 8 16 V70 Q26 66 42 76 Q58 66 76 70 V16 Q58 12 42 22Z" fill="#FFFFFF" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/><path class="ln" d="M42 22 V76 M16 30 Q26 28 34 32 M16 42 Q26 40 34 44 M50 32 Q58 28 68 30 M50 44 Q58 40 68 42" stroke="#2B7FD6" stroke-width="3"/></svg>
+        <h3>LKG</h3><span class="age">Ages [3.5–4.5 yrs]</span>
+        <p>Letters, numbers and stories in English and Tamil.</p>
+      </article>
+      <article class="prog reveal" style="--tint:var(--t4)">
+        <svg class="ico" width="84" height="84" viewBox="0 0 84 84" aria-hidden="true"><path d="M42 6 Q60 22 58 50 H26 Q24 22 42 6Z" fill="#FFFFFF" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/><circle cx="42" cy="30" r="7" fill="#2B7FD6" stroke="#1E2A4A" stroke-width="3"/><path d="M26 40 L14 56 L26 54Z M58 40 L70 56 L58 54Z" fill="#FF7A45" stroke="#1E2A4A" stroke-width="3" stroke-linejoin="round"/><path d="M34 52 Q42 80 50 52Z" fill="#FFCB3D" stroke="#1E2A4A" stroke-width="3" stroke-linejoin="round"/></svg>
+        <h3>UKG</h3><span class="age">Ages [4.5–5.5 yrs]</span>
+        <p>Reading, early maths and confidence for big school.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DAY ================= -->
+<section class="sec day" id="day">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 class="h2">A happy day, step by step</h2>
+      <p class="lede">Children thrive on rhythm. Here is how a day flows, from the morning hello to the evening goodbye.</p>
+    </div>
+    <div style="position:relative">
+      <div class="walker" aria-hidden="true"><div class="lane"><div class="kid" style="--shirt:#FF7A45;--pants:#1E2A4A;--skin:#E0A877;--hair:#2B1B10"><svg width="36" height="60" viewBox="0 0 60 100"><g class="legB"><path class="ln pants" d="M28 64 L26 90" stroke-width="8"/></g><rect class="shirt" x="17" y="34" width="26" height="34" rx="11"/><g class="legF"><path class="ln pants" d="M33 64 L35 90" stroke-width="8"/></g><circle class="skin" cx="31" cy="21" r="14"/><path class="hair" d="M17 18 Q20 4 32 6 Q44 6 45 18 Q38 10 30 12 Q22 12 17 18Z"/><circle cx="37" cy="20" r="2" fill="#1E2A4A"/></svg></div></div></div>
+      <ol class="steps">
+        <li class="reveal"><span class="bub" style="--b:#FFCB3D"><svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><circle class="ln" cx="12" cy="12" r="4.5" stroke="#1E2A4A" stroke-width="2"/><path class="ln" d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2" stroke="#1E2A4A" stroke-width="2"/></svg></span><strong>Morning hello</strong><span>Warm welcome and a short prayer</span></li>
+        <li class="reveal"><span class="bub" style="--b:#FFFFFF"><svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2.2" fill="#FF7A45"/><circle cx="5" cy="12" r="2.2" fill="#2B7FD6"/><circle cx="19" cy="12" r="2.2" fill="#1F8A3B"/><circle cx="12" cy="19" r="2.2" fill="#FFCB3D" stroke="#1E2A4A"/><circle class="ln" cx="12" cy="12" r="7" stroke="#1E2A4A" stroke-width="1.5" stroke-dasharray="2 3"/></svg></span><strong>Circle time</strong><span>Sharing, songs and the day’s theme</span></li>
+        <li class="reveal"><span class="bub" style="--b:#FF7A45"><svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><rect class="ln" x="3" y="12" width="8" height="8" rx="1.5" stroke="#1E2A4A" stroke-width="2"/><rect class="ln" x="13" y="12" width="8" height="8" rx="1.5" stroke="#1E2A4A" stroke-width="2"/><rect class="ln" x="8" y="3" width="8" height="8" rx="1.5" stroke="#1E2A4A" stroke-width="2"/></svg></span><strong>Play and explore</strong><span>Hands-on activity corners</span></li>
+        <li class="reveal"><span class="bub" style="--b:#DDF3D2"><svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M12 7c-4-3-9 0-8 6 1 5 4 8 6 8 1 0 1.5-.5 2-.5s1 .5 2 .5c2 0 5-3 6-8 1-6-4-9-8-6Z" stroke="#1E2A4A" stroke-width="2"/><path class="ln" d="M12 7c0-2 1-4 3-5" stroke="#1E2A4A" stroke-width="2"/></svg></span><strong>Snack time</strong><span>Healthy bites, eaten together</span></li>
+        <li class="reveal"><span class="bub" style="--b:#2B7FD6"><svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5 1-1.5 2-1.5h2a4 4 0 0 0 4-4c0-4.5-4-8-9-8Z" stroke="#FFFFFF" stroke-width="2"/><circle cx="7.5" cy="11" r="1.4" fill="#FFCB3D"/><circle cx="11" cy="7" r="1.4" fill="#FFCB3D"/><circle cx="16" cy="8" r="1.4" fill="#FFCB3D"/></svg></span><strong>Art, music, stories</strong><span>Painting, dance and storytime</span></li>
+        <li class="reveal"><span class="bub" style="--b:#FFFFFF"><svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-5h4v5" stroke="#1E2A4A" stroke-width="2"/></svg></span><strong>Home with a smile</strong><span>Safe hand-over to parents</span></li>
+      </ol>
+    </div>
+    <p style="margin:40px 0 0;font-weight:800">School timings: [9:30 am – 12:30 pm, Monday to Friday]</p>
+  </div>
+</section>
+
+<!-- ================= LIFE ================= -->
+<section class="sec" id="life">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 class="h2">Life at Smiley Kids</h2>
+      <p class="lede">Every corner is made for curious hands and busy feet.</p>
+    </div>
+    <div class="grid2">
+      <figure class="scene reveal" style="--tint:var(--t1)">
+        <svg role="img" aria-label="Illustration: a child painting a rainbow at an easel" viewBox="0 0 400 250">
+          <rect y="200" width="400" height="50" fill="#F7C9B1"/>
+          <path class="ln" d="M200 70 L170 210 M260 70 L290 210 M230 70 V210" stroke="#A0693F" stroke-width="7"/>
+          <rect x="168" y="60" width="124" height="96" rx="8" fill="#FFFFFF" stroke="#1E2A4A" stroke-width="5"/>
+          <path class="ln redraw" d="M186 140 Q230 72 274 140" stroke="#FF7A45" stroke-width="9"/>
+          <path class="ln redraw" d="M198 140 Q230 90 262 140" stroke="#FFCB3D" stroke-width="9" style="animation-delay:.25s"/>
+          <path class="ln redraw" d="M210 140 Q230 106 250 140" stroke="#2B7FD6" stroke-width="9" style="animation-delay:.5s"/>
+          <rect x="88" y="132" width="40" height="52" rx="16" fill="#1F8A3B"/>
+          <path class="ln" d="M100 182 L96 214 M116 182 L120 214" stroke="#1E2A4A" stroke-width="8"/>
+          <circle cx="108" cy="114" r="20" fill="#B5784A"/>
+          <path d="M88 112 Q90 90 110 92 Q128 94 128 112 Q120 100 108 102 Q96 102 88 112Z" fill="#2B1B10"/>
+          <circle cx="116" cy="112" r="2.5" fill="#1E2A4A"/><path class="ln" d="M112 122 Q117 126 122 121" stroke="#1E2A4A" stroke-width="2.5"/>
+          <g class="brush"><path class="ln" d="M122 144 L160 116" stroke="#B5784A" stroke-width="7"/><path class="ln" d="M160 116 L176 104" stroke="#A0693F" stroke-width="4"/><circle cx="178" cy="102" r="4" fill="#FF7A45"/></g>
+          <circle class="pop" cx="330" cy="70" r="12" fill="#FFCB3D"/><circle class="pop" cx="356" cy="110" r="8" fill="#2B7FD6" style="animation-delay:-.8s"/><circle class="pop" cx="320" cy="140" r="10" fill="#FF7A45" style="animation-delay:-1.6s"/><circle class="pop" cx="50" cy="60" r="10" fill="#1F8A3B" style="animation-delay:-1.2s"/>
+        </svg>
+        <figcaption><b>Art corner</b><span>Big paper, bright colours and room to make a mess.</span></figcaption>
+      </figure>
+      <figure class="scene reveal" style="--tint:var(--t3)">
+        <svg role="img" aria-label="Illustration: a teacher reading a story to children" viewBox="0 0 400 250">
+          <rect y="200" width="400" height="50" fill="#B8DDF5"/>
+          <rect x="166" y="104" width="64" height="80" rx="24" fill="#B8471F"/>
+          <circle cx="198" cy="82" r="24" fill="#8A5A3B"/>
+          <path d="M174 80 Q176 52 200 56 Q224 58 222 82 Q218 64 198 66 Q180 66 174 80Z" fill="#1A120B"/><circle cx="198" cy="58" r="9" fill="#1A120B"/>
+          <circle cx="190" cy="82" r="2.5" fill="#1E2A4A"/><circle cx="206" cy="82" r="2.5" fill="#1E2A4A"/><path class="ln" d="M190 92 Q198 98 206 92" stroke="#1E2A4A" stroke-width="2.5"/>
+          <path d="M198 140 Q178 128 160 132 V162 Q178 158 198 168 Q218 158 236 162 V132 Q218 128 198 140Z" fill="#FFFFFF" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/>
+          <rect x="58" y="168" width="38" height="36" rx="14" fill="#FFCB3D"/><circle cx="77" cy="152" r="17" fill="#E0A877"/><path d="M60 150 Q64 132 78 134 Q92 134 94 150 Q86 140 77 141 Q66 141 60 150Z" fill="#3B2412"/>
+          <rect x="306" y="168" width="38" height="36" rx="14" fill="#1F8A3B"/><circle cx="325" cy="152" r="17" fill="#B5784A"/><path d="M308 152 Q308 132 325 132 Q342 132 342 152 Q338 160 342 172 Q332 150 325 142 Q316 150 308 172 Q312 160 308 152Z" fill="#1A120B"/>
+          <rect x="114" y="178" width="34" height="30" rx="12" fill="#2B7FD6"/><circle cx="131" cy="164" r="15" fill="#C58C5C"/><path d="M116 162 Q120 146 132 148 Q144 148 146 162 Q140 152 131 153 Q122 153 116 162Z" fill="#2B1B10"/>
+          <text class="rise" x="250" y="120" fill="#FF7A45" font-family="'Baloo 2',Arial" font-size="34" font-weight="800">A</text>
+          <text class="rise" x="140" y="110" fill="#2B7FD6" font-family="'Noto Sans Tamil','Baloo 2',Arial" font-size="30" font-weight="800" style="animation-delay:-1.3s">அ</text>
+          <text class="rise" x="290" y="100" fill="#1F8A3B" font-family="'Baloo 2',Arial" font-size="30" font-weight="800" style="animation-delay:-2.6s">1</text>
+        </svg>
+        <figcaption><b>Story circle</b><span>Rhymes and stories in English and Tamil, every day.</span></figcaption>
+      </figure>
+      <figure class="scene reveal" style="--tint:var(--t4)">
+        <svg role="img" aria-label="Illustration: a child watering a growing plant while a butterfly flies past" viewBox="0 0 400 250">
+          <rect y="200" width="400" height="50" fill="#9FD58C"/>
+          <g class="grow"><path class="ln" d="M250 204 V140" stroke="#3E8E3A" stroke-width="6"/><path d="M250 168 Q226 150 230 132 Q250 140 250 168Z M250 152 Q274 134 272 118 Q252 124 250 152Z" fill="#5DB654"/><circle cx="250" cy="130" r="13" fill="#FF7A45"/><circle cx="250" cy="130" r="5" fill="#FFCB3D"/></g>
+          <rect x="232" y="196" width="36" height="20" rx="5" fill="#B8471F"/>
+          <rect x="110" y="128" width="40" height="52" rx="16" fill="#FFCB3D"/>
+          <path class="ln" d="M122 178 L118 212 M138 178 L142 212" stroke="#1E2A4A" stroke-width="8"/>
+          <circle cx="130" cy="110" r="20" fill="#E0A877"/><path d="M110 108 Q112 86 132 88 Q150 90 150 108 Q142 96 130 98 Q118 98 110 108Z" fill="#3B2412"/>
+          <circle cx="138" cy="108" r="2.5" fill="#1E2A4A"/><path class="ln" d="M134 118 Q139 122 144 117" stroke="#1E2A4A" stroke-width="2.5"/>
+          <g class="tilt"><path d="M150 132 H196 L212 120 L216 126 L200 146 H150Z" fill="#2B7FD6" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/><path class="ln" d="M150 140 L136 148" stroke="#E0A877" stroke-width="7"/></g>
+          <circle class="drip" cx="222" cy="130" r="4" fill="#2B7FD6"/><circle class="drip" cx="230" cy="126" r="4" fill="#2B7FD6" style="animation-delay:-.35s"/><circle class="drip" cx="226" cy="138" r="4" fill="#2B7FD6" style="animation-delay:-.7s"/>
+          <g class="flyB"><path d="M300 70 Q286 52 294 46 Q306 46 300 70Z M300 70 Q314 52 306 46 Q294 46 300 70Z" fill="#FF7A45" stroke="#1E2A4A" stroke-width="2"/><path class="ln" d="M300 66 V78" stroke="#1E2A4A" stroke-width="3"/></g>
+        </svg>
+        <figcaption><b>Garden play</b><span>Planting, watering and watching things grow.</span></figcaption>
+      </figure>
+      <figure class="scene reveal" style="--tint:var(--t2)">
+        <svg role="img" aria-label="Illustration: one child playing a drum while another dances" viewBox="0 0 400 250">
+          <rect y="200" width="400" height="50" fill="#F5DE8A"/>
+          <g class="dance"><rect x="240" y="126" width="40" height="50" rx="16" fill="#FF7A45"/><path d="M234 168 L286 168 L296 196 L224 196Z" fill="#FF7A45"/><path class="ln" d="M252 196 L248 214 M268 196 L272 214" stroke="#1E2A4A" stroke-width="8"/><path class="ln" d="M244 136 L222 112 M276 136 L298 112" stroke="#C58C5C" stroke-width="7"/><circle cx="260" cy="106" r="20" fill="#C58C5C"/><path d="M240 106 Q240 84 260 84 Q280 84 280 106 Q274 92 260 94 Q246 92 240 106Z" fill="#1A120B"/><circle cx="260" cy="82" r="8" fill="#1A120B"/><circle cx="253" cy="106" r="2.5" fill="#1E2A4A"/><circle cx="267" cy="106" r="2.5" fill="#1E2A4A"/><path class="ln" d="M253 115 Q260 121 267 115" stroke="#1E2A4A" stroke-width="2.5"/></g>
+          <rect x="96" y="132" width="40" height="50" rx="16" fill="#2B7FD6"/>
+          <path class="ln" d="M108 180 L104 212 M124 180 L128 212" stroke="#1E2A4A" stroke-width="8"/>
+          <circle cx="116" cy="112" r="20" fill="#8A5A3B"/><path d="M96 110 Q98 88 118 90 Q136 92 136 110 Q128 98 116 100 Q104 100 96 110Z" fill="#1A120B"/>
+          <circle cx="124" cy="110" r="2.5" fill="#1E2A4A"/><path class="ln" d="M120 120 Q125 124 130 119" stroke="#1E2A4A" stroke-width="2.5"/>
+          <ellipse cx="160" cy="176" rx="26" ry="10" fill="#FFCB3D" stroke="#1E2A4A" stroke-width="4"/>
+          <path d="M134 176 V204 Q160 216 186 204 V176" fill="#FF7A45" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/>
+          <g class="beat"><path class="ln" d="M132 146 L156 170" stroke="#8A5A3B" stroke-width="7"/><path class="ln" d="M156 170 L162 176" stroke="#A0693F" stroke-width="4"/></g>
+          <g class="rise"><path class="ln" d="M196 118 V90 L214 86 V112" stroke="#1E2A4A" stroke-width="4"/><circle cx="191" cy="118" r="6" fill="#1E2A4A"/><circle cx="209" cy="112" r="6" fill="#1E2A4A"/></g>
+          <g class="rise" style="animation-delay:-1.5s"><path class="ln" d="M336 108 V82" stroke="#1E2A4A" stroke-width="4"/><circle cx="331" cy="108" r="6" fill="#1E2A4A"/></g>
+          <g class="rise" style="animation-delay:-2.8s"><path class="ln" d="M64 98 V72" stroke="#1E2A4A" stroke-width="4"/><circle cx="59" cy="98" r="6" fill="#1E2A4A"/></g>
+        </svg>
+        <figcaption><b>Music and dance</b><span>Drums, claps and twirls to build rhythm and confidence.</span></figcaption>
+      </figure>
+    </div>
+    <p style="margin:24px 0 0;font-size:15px;color:var(--ink-soft)">Illustrations shown for now; real photos of our campus are coming soon.</p>
+  </div>
+</section>
+
+<!-- ================= PORTAL ================= -->
+<section class="sec portal" id="portal">
+  <div class="wrap split">
+    <div class="reveal">
+      <h2 class="h2">Class notes, straight to your phone</h2>
+      <p class="lede">Our Parent Portal keeps you close to your child’s day. Teachers upload notes and activity sheets for each class, and you can open or download them anytime.</p>
+      <ul class="ticks">
+        <li><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFCB3D"/><path class="ln" d="M7 12.5l3 3 7-7" stroke="#1E2A4A" stroke-width="2.6"/></svg>Only your child’s class, kept private</li>
+        <li><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFCB3D"/><path class="ln" d="M7 12.5l3 3 7-7" stroke="#1E2A4A" stroke-width="2.6"/></svg>Newest notes first, sorted by date</li>
+        <li><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFCB3D"/><path class="ln" d="M7 12.5l3 3 7-7" stroke="#1E2A4A" stroke-width="2.6"/></svg>Works on any phone, no app to install</li>
+      </ul>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:28px">
+        <a class="btn b-sun" href="#portal" style="border-color:#FFCB3D;box-shadow:0 5px 0 #0F1830">Parent login</a>
+        <a class="btn" href="#portal" style="background:transparent;color:#FFF7E6;border-color:#FFF7E6;box-shadow:0 5px 0 #0F1830">Teacher login</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="phone"><div class="screen">
+        <div style="display:flex;justify-content:space-between;align-items:center"><strong class="disp" style="font-size:20px">LKG · [Class name]</strong><span class="newb">2 new</span></div>
+        <p style="margin:0;font-size:13px;color:#4B5672;font-weight:700">Class notes</p>
+        <div class="note"><i style="background:#FFCB3D"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M6 3h8l4 4v14H6Z M14 3v4h4" stroke="#1E2A4A" stroke-width="2"/></svg></i><span style="flex:1;min-width:0"><b>Rhyme sheet: Twinkle Twinkle</b><small>Today</small></span><svg width="22" height="22" viewBox="0 0 24 24" aria-label="Download"><path class="ln" d="M12 4v11M7 10l5 5 5-5M5 20h14" stroke="#1E2A4A" stroke-width="2.2"/></svg></div>
+        <div class="note"><i style="background:#FFE3D5"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M6 3h8l4 4v14H6Z M14 3v4h4" stroke="#1E2A4A" stroke-width="2"/></svg></i><span style="flex:1;min-width:0"><b>Colouring: Fruits we love</b><small>Today</small></span><svg width="22" height="22" viewBox="0 0 24 24" aria-label="Download"><path class="ln" d="M12 4v11M7 10l5 5 5-5M5 20h14" stroke="#1E2A4A" stroke-width="2.2"/></svg></div>
+        <div class="note"><i style="background:#D9F0FF"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M6 3h8l4 4v14H6Z M14 3v4h4" stroke="#1E2A4A" stroke-width="2"/></svg></i><span style="flex:1;min-width:0"><b>Letter practice: A to E</b><small>Yesterday</small></span><svg width="22" height="22" viewBox="0 0 24 24" aria-label="Download"><path class="ln" d="M12 4v11M7 10l5 5 5-5M5 20h14" stroke="#1E2A4A" stroke-width="2.2"/></svg></div>
+        <div class="note"><i style="background:#DDF3D2"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M6 3h8l4 4v14H6Z M14 3v4h4" stroke="#1E2A4A" stroke-width="2"/></svg></i><span style="flex:1;min-width:0"><b>Field trip consent note</b><small>Monday</small></span><svg width="22" height="22" viewBox="0 0 24 24" aria-label="Download"><path class="ln" d="M12 4v11M7 10l5 5 5-5M5 20h14" stroke="#1E2A4A" stroke-width="2.2"/></svg></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap faq">
+    <div class="head reveal"><h2 class="h2">Questions parents ask us</h2></div>
+    <div class="q reveal" data-open="true"><button type="button" aria-expanded="true">What age can my child join?<span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M12 5v14M5 12h14" stroke="#1E2A4A" stroke-width="3"/></svg></span></button><div class="ans"><div><p>Children can join our Playgroup from [age]. Talk to us and we’ll help you pick the right class.</p></div></div></div>
+    <div class="q reveal" data-open="false"><button type="button" aria-expanded="false">What are the school timings?<span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M12 5v14M5 12h14" stroke="#1E2A4A" stroke-width="3"/></svg></span></button><div class="ans"><div><p>[School timings and days]. A short settling-in schedule is available for new children.</p></div></div></div>
+    <div class="q reveal" data-open="false"><button type="button" aria-expanded="false">How do you keep children safe?<span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M12 5v14M5 12h14" stroke="#1E2A4A" stroke-width="3"/></svg></span></button><div class="ans"><div><p>[Safety measures, for example CCTV, trained staff and a secure pick-up process.]</p></div></div></div>
+    <div class="q reveal" data-open="false"><button type="button" aria-expanded="false">How will I know what my child learned?<span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M12 5v14M5 12h14" stroke="#1E2A4A" stroke-width="3"/></svg></span></button><div class="ans"><div><p>Through our Parent Portal. Teachers upload class notes and activity sheets, and you can download them anytime on your phone.</p></div></div></div>
+    <div class="q reveal" data-open="false"><button type="button" aria-expanded="false">Can we visit before admission?<span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path class="ln" d="M12 5v14M5 12h14" stroke="#1E2A4A" stroke-width="3"/></svg></span></button><div class="ans"><div><p>Yes, please do. Book a visit below and we’ll show you around the classrooms and play areas.</p></div></div></div>
+  </div>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section class="sec visit" id="visit">
+  <div class="wrap split" style="align-items:start">
+    <div class="formcard reveal" id="formcard">
+      <span class="conf" style="left:8%;background:#FF7A45"></span><span class="conf" style="left:22%;background:#FFCB3D;animation-delay:.2s"></span><span class="conf" style="left:38%;background:#2B7FD6;animation-delay:.1s"></span><span class="conf" style="left:54%;background:#1F8A3B;animation-delay:.35s"></span><span class="conf" style="left:70%;background:#FF7A45;animation-delay:.5s"></span><span class="conf" style="left:86%;background:#FFCB3D;animation-delay:.15s"></span>
+      <form id="visitForm">
+        <h2 class="h2" style="font-size:clamp(32px,3.4vw,42px)">Book a school visit</h2>
+        <p style="margin:0 0 22px;color:var(--ink-soft)">Come see the classrooms and meet our teachers.</p>
+        <label>Parent’s name<input type="text" name="name" autocomplete="name" required></label>
+        <label>Phone number<input type="tel" name="phone" autocomplete="tel" required></label>
+        <label>Class you’re interested in<select name="cls"><option>Playgroup</option><option>Nursery</option><option>LKG</option><option>UKG</option></select></label>
+        <button class="btn b-tang" type="submit" style="width:100%">Request a visit</button>
+      </form>
+      <div class="thanks" role="status">
+        <svg width="96" height="96" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="#FFCB3D" stroke="#1E2A4A" stroke-width="5"/><circle cx="38" cy="44" r="5" fill="#1E2A4A"/><circle cx="62" cy="44" r="5" fill="#1E2A4A"/><path class="ln" d="M32 58 Q50 78 68 58" stroke="#1E2A4A" stroke-width="5"/></svg>
+        <h3 style="margin:10px 0 6px;font-size:32px">Visit request sent</h3>
+        <p style="margin:0 auto;max-width:32ch;color:var(--ink-soft)">We’ll call you within a day to fix a time. See you soon at Smiley Kids!</p>
+      </div>
+    </div>
+    <div class="reveal" style="display:flex;flex-direction:column;gap:18px">
+      <h2 class="h2" style="margin:0">Find us in Tirupur</h2>
+      <p class="lede" style="color:var(--ink)">[Street address], Tirupur, Tamil Nadu [PIN]<br>Phone: [+91 phone number]</p>
+      <div class="map">
+        <svg role="img" aria-label="Map with a pin marking the school" viewBox="0 0 480 240" style="display:block;width:100%;height:auto">
+          <path class="ln" d="M0 80 H480 M0 180 H480 M120 0 V240 M330 0 V240" stroke="#FFFFFF" stroke-width="18" opacity=".85"/>
+          <path class="ln" d="M0 30 Q200 120 480 40" stroke="#BFE6FF" stroke-width="22"/>
+          <rect x="160" y="100" width="60" height="50" rx="8" fill="#C9E8BC"/><rect x="360" y="100" width="80" height="50" rx="8" fill="#C9E8BC"/>
+          <ellipse cx="240" cy="156" rx="16" ry="5" fill="#1E2A4A" opacity=".25"/>
+          <g class="pin"><path d="M240 150 C210 112 208 92 214 82 A30 30 0 1 1 266 82 C272 92 270 112 240 150Z" fill="#FF7A45" stroke="#1E2A4A" stroke-width="4"/><circle cx="240" cy="78" r="11" fill="#FFFBF0" stroke="#1E2A4A" stroke-width="3"/></g>
+        </svg>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <a class="btn b-white" href="#visit">Get directions</a>
+        <a class="btn b-leaf" href="#visit">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:70px;background:var(--sky)"><path d="M0 40 Q240 0 480 34 T960 30 T1440 26 V70 H0Z" fill="#1E2A4A"/></svg>
+  <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding-top:20px;padding-bottom:20px">
+    <div style="display:flex;align-items:flex-end;gap:6px">
+      <svg width="46" height="76" viewBox="0 0 60 100" aria-hidden="true"><rect x="17" y="34" width="26" height="34" rx="11" fill="#FF7A45"/><path class="ln" d="M26 66 V92 M34 66 V92" stroke="#FFF7E6" stroke-width="7"/><g class="waveArm"><path class="ln" d="M40 40 L50 20" stroke="#E0A877" stroke-width="6"/></g><circle cx="30" cy="21" r="14" fill="#E0A877"/><path d="M16 18 Q18 4 30 6 Q42 6 44 18 Q36 10 30 12 Q22 12 16 18Z" fill="#2B1B10"/></svg>
+      <svg width="46" height="76" viewBox="0 0 60 100" aria-hidden="true"><rect x="17" y="34" width="26" height="34" rx="11" fill="#FFCB3D"/><path class="ln" d="M26 66 V92 M34 66 V92" stroke="#FFF7E6" stroke-width="7"/><g class="waveArm" style="animation-delay:-.3s"><path class="ln" d="M40 40 L50 20" stroke="#8A5A3B" stroke-width="6"/></g><circle cx="30" cy="21" r="14" fill="#8A5A3B"/><path d="M14 22 Q14 4 30 4 Q46 4 46 22 Q42 30 46 40 Q36 18 30 12 Q24 18 14 40 Q18 30 14 22Z" fill="#1A120B"/></svg>
+      <div style="padding-left:10px"><strong class="disp" style="font-size:24px">Smiley Kids Gurukulam</strong><br><span style="font-size:15px;color:#D3DCEF">A happy start in Tirupur</span></div>
+    </div>
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:22px;font-weight:800">
+      <a href="#programs">Programs</a><a href="#portal">Parent portal</a><a href="#faq">FAQs</a><a href="#visit">Visit us</a>
+    </nav>
+  </div>
+  <p class="wrap" style="margin:0 auto;padding-bottom:30px;font-size:14px;color:#B9C3D6">© 2026 Smiley Kids Gurukulam, Tirupur</p>
+</footer>
+
+<script>
+(function(){
+  // smooth in-page scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+  // reveal on scroll
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+    },{threshold:.15});
+    els.forEach(function(el){io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}); }
+  // parallax hills on pointer move
+  var hero=document.querySelector('.hero');
+  var layers=document.querySelectorAll('.layer');
+  if(hero && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    hero.addEventListener('pointermove',function(e){
+      var r=hero.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5;
+      layers.forEach(function(l){ var d=+l.dataset.depth||10; l.style.transform='translateX('+(-x*d)+'px)'; });
+    });
+    hero.addEventListener('pointerleave',function(){ layers.forEach(function(l){ l.style.transform=''; }); });
+  }
+  // faq accordion
+  document.querySelectorAll('.q button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var q=b.closest('.q'); var open=q.getAttribute('data-open')==='true';
+      document.querySelectorAll('.q').forEach(function(o){o.setAttribute('data-open','false');o.querySelector('button').setAttribute('aria-expanded','false');});
+      if(!open){q.setAttribute('data-open','true');b.setAttribute('aria-expanded','true');}
+    });
+  });
+  // demo form
+  var f=document.getElementById('visitForm');
+  f.addEventListener('submit',function(e){ e.preventDefault(); document.getElementById('formcard').classList.add('sent'); });
+})();
+</script>
+</body>
+</html>
